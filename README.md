@@ -16,4 +16,4 @@
 
 `yarn serve`
 
-Next.js version of the same app can be found [here](https://github.com/mrmartineau/feeds.zander.wtf-nextjs)
+Source code for a Next.js version of the same app can be found [here](https://github.com/mrmartineau/feeds.zander.wtf-nextjs)
