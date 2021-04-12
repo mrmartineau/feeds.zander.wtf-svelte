@@ -3,6 +3,7 @@
   import ColumnHeading from './ColumnHeading.svelte'
   import Link from './Link.svelte'
   import { simpleUrl } from '../utils/simpleUrl'
+  import LinkSkeleton from './LinkSkeleton.svelte'
 
   const COUNT = 50
   // const FEED_PATH = `https://api.airtable.com/v0/appaU6WzgLaVQp5xt/bookmarks?fields%5B%5D=Title&fields%5B%5D=URL&fields%5B%5D=Description&fields%5B%5D=Tags&fields%5B%5D=Created&sort%5B0%5D%5Bfield%5D=Created&sort%5B0%5D%5Bdirection%5D=desc&maxRecords=50`
@@ -30,7 +31,18 @@
         </Link>
       </li>
     {:else}
-		<li>loading...</li>
+    <LinkSkeleton />
+    <LinkSkeleton />
+    <LinkSkeleton />
+    <LinkSkeleton />
+    <LinkSkeleton />
+    <LinkSkeleton />
+    <LinkSkeleton />
+    <LinkSkeleton />
+    <LinkSkeleton />
+    <LinkSkeleton />
+    <LinkSkeleton />
+    <LinkSkeleton />
 	{/each}
   </ul>
 </div>

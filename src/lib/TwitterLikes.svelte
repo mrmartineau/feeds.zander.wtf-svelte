@@ -1,6 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte'
   import ColumnHeading from './ColumnHeading.svelte'
+  import LinkSkeleton from './LinkSkeleton.svelte'
   import Link from './Link.svelte'
   import { simpleUrl } from '../utils/simpleUrl'
 
@@ -29,7 +30,18 @@
         </Link>
       </li>
     {:else}
-		<li>loading...</li>
+    <LinkSkeleton />
+    <LinkSkeleton />
+    <LinkSkeleton />
+    <LinkSkeleton />
+    <LinkSkeleton />
+    <LinkSkeleton />
+    <LinkSkeleton />
+    <LinkSkeleton />
+    <LinkSkeleton />
+    <LinkSkeleton />
+    <LinkSkeleton />
+    <LinkSkeleton />
 	{/each}
   </ul>
 </div>

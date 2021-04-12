@@ -1,6 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte'
   import ColumnHeading from './ColumnHeading.svelte'
+  import LinkSkeleton from './LinkSkeleton.svelte'
   import Link from './Link.svelte'
 
   const FEED_PATH = `https://rsstojson.com/v1/api/?rss_url=https://www.instapaper.com/rss/305104/YzRvSlLTQWV1lz5OjjeEk4Ogl8s`
@@ -27,7 +28,18 @@
         </Link>
       </li>
     {:else}
-		<li>loading...</li>
+    <LinkSkeleton />
+    <LinkSkeleton />
+    <LinkSkeleton />
+    <LinkSkeleton />
+    <LinkSkeleton />
+    <LinkSkeleton />
+    <LinkSkeleton />
+    <LinkSkeleton />
+    <LinkSkeleton />
+    <LinkSkeleton />
+    <LinkSkeleton />
+    <LinkSkeleton />
 	{/each}
   </ul>
 </div>
