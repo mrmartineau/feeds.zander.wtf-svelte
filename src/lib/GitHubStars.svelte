@@ -7,11 +7,15 @@
   const FEED_PATH = `/api/github`
 
   let data = []
+  if (window.localStorage.getItem('zm-gh-stars')) {
+    data = JSON.parse(window.localStorage.getItem('zm-gh-stars'))
+  }
   onMount(async () => {
     try {
       const res = await fetch(FEED_PATH);
       const json = await res.json();
       data = json.body
+      window.localStorage.setItem('zm-gh-stars', JSON.stringify(data))
     } catch (error) {
       console.log('no stars')
     }

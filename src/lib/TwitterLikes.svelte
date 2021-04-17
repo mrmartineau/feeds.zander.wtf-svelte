@@ -9,11 +9,15 @@
   const FEED_PATH = `/api/airtable?base=${import.meta.env.VITE_TWITTER_LIKES_BASE}&table=Likes&count=${COUNT}`
 
   let data = []
+  if (window.localStorage.getItem('zm-twitter-likes')) {
+    data = JSON.parse(window.localStorage.getItem('zm-twitter-likes'))
+  }
   onMount(async () => {
     try {
       const res = await fetch(FEED_PATH);
       const json = await res.json();
       data = json.body.records
+      window.localStorage.setItem('zm-twitter-likes', JSON.stringify(data))
     } catch (error) {
       console.log('no twitter likes')
     }

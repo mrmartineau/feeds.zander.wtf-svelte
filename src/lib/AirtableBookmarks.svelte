@@ -6,15 +6,18 @@
   import LinkSkeleton from './LinkSkeleton.svelte'
 
   const COUNT = 50
-  // const FEED_PATH = `https://api.airtable.com/v0/appaU6WzgLaVQp5xt/bookmarks?fields%5B%5D=Title&fields%5B%5D=URL&fields%5B%5D=Description&fields%5B%5D=Tags&fields%5B%5D=Created&sort%5B0%5D%5Bfield%5D=Created&sort%5B0%5D%5Bdirection%5D=desc&maxRecords=50`
   const FEED_PATH = `/api/airtable?base=${import.meta.env.VITE_BOOKMARKS_BASE}&table=bookmarks&count=${COUNT}`
 
   let data = []
+  if (window.localStorage.getItem('zm-bookmarks')) {
+    data = JSON.parse(window.localStorage.getItem('zm-bookmarks'))
+  }
   onMount(async () => {
     try {
       const res = await fetch(FEED_PATH);
       const json = await res.json();
       data = json.body.records
+      window.localStorage.setItem('zm-bookmarks', JSON.stringify(data))
     } catch (error) {
       console.log('no bookmarks')
     }
