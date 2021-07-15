@@ -3,6 +3,7 @@
   import GitHubStars from './lib/GitHubStars.svelte'
   import InstapaperUnread from './lib/InstapaperUnread.svelte'
   import TwitterLikes from './lib/TwitterLikes.svelte'
+  import ProductHunt from './lib/ProductHunt.svelte'
   import Tailwind from './Tailwind.svelte';
 </script>
 
@@ -21,6 +22,9 @@
 		</div>
 		<div class="w-80 flex-none">
 			<GitHubStars />
+		</div>
+		<div class="w-80 flex-none">
+			<ProductHunt />
 		</div>
   </main>
 </div>
