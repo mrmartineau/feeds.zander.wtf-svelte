@@ -28,11 +28,13 @@
   <ColumnHeading>Twitter Likes</ColumnHeading>
   <ul>
     {#each data as { fields }}
-      <li class="mb-1">
-        <Link url={fields.URL} subtitle={simpleUrl(fields.URL)}>
-          {fields.Title}
-        </Link>
-      </li>
+      {#if fields.Title !== 'mobile.twitter.com'}
+        <li class="mb-1">
+          <Link url={fields.URL} subtitle={simpleUrl(fields.URL)}>
+            {fields.Title}
+          </Link>
+        </li>
+      {/if}
     {:else}
     <LinkSkeleton />
     <LinkSkeleton />
@@ -46,6 +48,6 @@
     <LinkSkeleton />
     <LinkSkeleton />
     <LinkSkeleton />
-	{/each}
+  {/each}
   </ul>
 </div>
