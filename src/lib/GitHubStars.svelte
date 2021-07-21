@@ -12,8 +12,8 @@
   }
   onMount(async () => {
     try {
-      const res = await fetch(FEED_PATH);
-      const json = await res.json();
+      const res = await fetch(FEED_PATH)
+      const json = await res.json()
       data = json.body
       window.localStorage.setItem('zm-gh-stars', JSON.stringify(data))
     } catch (error) {
@@ -32,18 +32,18 @@
         </Link>
       </li>
     {:else}
-    <LinkSkeleton />
-    <LinkSkeleton />
-    <LinkSkeleton />
-    <LinkSkeleton />
-    <LinkSkeleton />
-    <LinkSkeleton />
-    <LinkSkeleton />
-    <LinkSkeleton />
-    <LinkSkeleton />
-    <LinkSkeleton />
-    <LinkSkeleton />
-    <LinkSkeleton />
-	{/each}
+      <LinkSkeleton />
+      <LinkSkeleton />
+      <LinkSkeleton />
+      <LinkSkeleton />
+      <LinkSkeleton />
+      <LinkSkeleton />
+      <LinkSkeleton />
+      <LinkSkeleton />
+      <LinkSkeleton />
+      <LinkSkeleton />
+      <LinkSkeleton />
+      <LinkSkeleton />
+    {/each}
   </ul>
 </div>

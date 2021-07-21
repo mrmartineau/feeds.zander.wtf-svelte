@@ -7,7 +7,8 @@
     "build": "vite build",
     "test": "jest",
     "test:watch": "jest --watchAll",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "format": "prettier --write \"**/*.{svelte,js,jsx,ts,tsx,json,md}\""
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^1.0.0-next.6",
@@ -20,6 +21,8 @@
     "jest": "^26.6.3",
     "postcss": "^8.2.7",
     "postcss-load-config": "^3.0.1",
+    "prettier": "^2.3.2",
+    "prettier-plugin-svelte": "^2.3.1",
     "svelte": "^3.35.0",
     "svelte-jester": "^1.3.1",
     "svelte-preprocess": "^4.6.9",

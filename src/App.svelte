@@ -4,7 +4,7 @@
   import InstapaperUnread from './lib/InstapaperUnread.svelte'
   import TwitterLikes from './lib/TwitterLikes.svelte'
   import ProductHunt from './lib/ProductHunt.svelte'
-  import Tailwind from './Tailwind.svelte';
+  import Tailwind from './Tailwind.svelte'
 </script>
 
 <Tailwind />
@@ -15,16 +15,16 @@
       <AirtableBookmarks />
     </div>
     <div class="w-80 flex-none">
-			<TwitterLikes />
-		</div>
-		<div class="w-80 flex-none">
-			<InstapaperUnread />
-		</div>
-		<div class="w-80 flex-none">
-			<GitHubStars />
-		</div>
-		<div class="w-80 flex-none">
-			<ProductHunt />
-		</div>
+      <TwitterLikes />
+    </div>
+    <div class="w-80 flex-none">
+      <InstapaperUnread />
+    </div>
+    <div class="w-80 flex-none">
+      <GitHubStars />
+    </div>
+    <div class="w-80 flex-none">
+      <ProductHunt />
+    </div>
   </main>
 </div>

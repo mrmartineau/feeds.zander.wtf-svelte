@@ -6,7 +6,9 @@
   import { simpleUrl } from '../utils/simpleUrl'
 
   const COUNT = 50
-  const FEED_PATH = `/api/airtable?base=${import.meta.env.VITE_TWITTER_LIKES_BASE}&table=Likes&count=${COUNT}`
+  const FEED_PATH = `/api/airtable?base=${
+    import.meta.env.VITE_TWITTER_LIKES_BASE
+  }&table=Likes&count=${COUNT}`
 
   let data = []
   if (window.localStorage.getItem('zm-twitter-likes')) {
@@ -14,8 +16,8 @@
   }
   onMount(async () => {
     try {
-      const res = await fetch(FEED_PATH);
-      const json = await res.json();
+      const res = await fetch(FEED_PATH)
+      const json = await res.json()
       data = json.body.records
       window.localStorage.setItem('zm-twitter-likes', JSON.stringify(data))
     } catch (error) {
@@ -36,18 +38,18 @@
         </li>
       {/if}
     {:else}
-    <LinkSkeleton />
-    <LinkSkeleton />
-    <LinkSkeleton />
-    <LinkSkeleton />
-    <LinkSkeleton />
-    <LinkSkeleton />
-    <LinkSkeleton />
-    <LinkSkeleton />
-    <LinkSkeleton />
-    <LinkSkeleton />
-    <LinkSkeleton />
-    <LinkSkeleton />
-  {/each}
+      <LinkSkeleton />
+      <LinkSkeleton />
+      <LinkSkeleton />
+      <LinkSkeleton />
+      <LinkSkeleton />
+      <LinkSkeleton />
+      <LinkSkeleton />
+      <LinkSkeleton />
+      <LinkSkeleton />
+      <LinkSkeleton />
+      <LinkSkeleton />
+      <LinkSkeleton />
+    {/each}
   </ul>
 </div>

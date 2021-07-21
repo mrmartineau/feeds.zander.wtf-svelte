@@ -6,7 +6,9 @@
   import LinkSkeleton from './LinkSkeleton.svelte'
 
   const COUNT = 50
-  const FEED_PATH = `/api/airtable?base=${import.meta.env.VITE_BOOKMARKS_BASE}&table=bookmarks&count=${COUNT}`
+  const FEED_PATH = `/api/airtable?base=${
+    import.meta.env.VITE_BOOKMARKS_BASE
+  }&table=bookmarks&count=${COUNT}`
 
   let data = []
   if (window.localStorage.getItem('zm-bookmarks')) {
@@ -14,8 +16,8 @@
   }
   onMount(async () => {
     try {
-      const res = await fetch(FEED_PATH);
-      const json = await res.json();
+      const res = await fetch(FEED_PATH)
+      const json = await res.json()
       data = json.body.records
       window.localStorage.setItem('zm-bookmarks', JSON.stringify(data))
     } catch (error) {
@@ -34,18 +36,18 @@
         </Link>
       </li>
     {:else}
-    <LinkSkeleton />
-    <LinkSkeleton />
-    <LinkSkeleton />
-    <LinkSkeleton />
-    <LinkSkeleton />
-    <LinkSkeleton />
-    <LinkSkeleton />
-    <LinkSkeleton />
-    <LinkSkeleton />
-    <LinkSkeleton />
-    <LinkSkeleton />
-    <LinkSkeleton />
-	{/each}
+      <LinkSkeleton />
+      <LinkSkeleton />
+      <LinkSkeleton />
+      <LinkSkeleton />
+      <LinkSkeleton />
+      <LinkSkeleton />
+      <LinkSkeleton />
+      <LinkSkeleton />
+      <LinkSkeleton />
+      <LinkSkeleton />
+      <LinkSkeleton />
+      <LinkSkeleton />
+    {/each}
   </ul>
 </div>
