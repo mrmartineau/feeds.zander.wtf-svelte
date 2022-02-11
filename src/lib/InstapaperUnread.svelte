@@ -4,7 +4,7 @@
   import LinkSkeleton from './LinkSkeleton.svelte'
   import Link from './Link.svelte'
 
-  const FEED_PATH = `https://rsstojson.com/v1/api/?rss_url=https://www.instapaper.com/rss/305104/YzRvSlLTQWV1lz5OjjeEk4Ogl8s`
+  const FEED_PATH = `https://rsstojson.zander.wtf/api/rss?url=https://www.instapaper.com/rss/305104/YzRvSlLTQWV1lz5OjjeEk4Ogl8s`
 
   let data = []
   if (window.localStorage.getItem('zm-instapaper')) {
@@ -14,7 +14,7 @@
     try {
       const res = await fetch(FEED_PATH)
       const json = await res.json()
-      data = json.rss.channel[0].item
+      data = json.items
       window.localStorage.setItem('zm-instapaper', JSON.stringify(data))
     } catch (error) {
       console.log('no unread items')
