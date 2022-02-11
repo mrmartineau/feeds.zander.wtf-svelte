@@ -11,29 +11,29 @@
     "format": "prettier --write \"**/*.{svelte,js,jsx,ts,tsx,json,md}\""
   },
   "devDependencies": {
-    "@sveltejs/vite-plugin-svelte": "^1.0.0-next.6",
+    "@sveltejs/vite-plugin-svelte": "^1.0.0-next.30",
     "@testing-library/svelte": "^3.0.3",
-    "@types/jest": "^26.0.21",
-    "autoprefixer": "^10.2.5",
-    "babel-jest": "^26.6.3",
-    "cssnano": "^5.0.0",
-    "dotenv": "^8.2.0",
-    "jest": "^26.6.3",
-    "postcss": "^8.2.7",
-    "postcss-load-config": "^3.0.1",
-    "prettier": "^2.3.2",
-    "prettier-plugin-svelte": "^2.3.1",
-    "svelte": "^3.35.0",
-    "svelte-jester": "^1.3.1",
-    "svelte-preprocess": "^4.6.9",
-    "ts-jest": "^26.5.4",
-    "typescript": "^4.2.3",
-    "vite": "^2.1.0"
+    "@types/jest": "^27.0.2",
+    "autoprefixer": "^10.4.0",
+    "babel-jest": "^27.3.1",
+    "cssnano": "^5.0.10",
+    "dotenv": "^10.0.0",
+    "jest": "^27.3.1",
+    "postcss": "^8.3.11",
+    "postcss-load-config": "^3.1.0",
+    "prettier": "^2.4.1",
+    "prettier-plugin-svelte": "^2.5.0",
+    "svelte": "^3.44.1",
+    "svelte-jester": "^2.1.5",
+    "svelte-preprocess": "^4.9.8",
+    "ts-jest": "^27.0.7",
+    "typescript": "^4.4.4",
+    "vite": "^2.6.14"
   },
   "dependencies": {
     "@now/build-utils": "^2.7.0",
     "@now/node": "^1.8.5",
-    "axios": "^0.21.1",
-    "tailwindcss": "^2.0.4"
+    "axios": "^0.24.0",
+    "tailwindcss": "^2.2.19"
   }
 }
