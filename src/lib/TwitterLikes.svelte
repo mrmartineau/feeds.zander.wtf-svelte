@@ -32,7 +32,7 @@
     {#each data as { fields }}
       {#if fields.Title !== 'mobile.twitter.com'}
         <li class="mb-1">
-          <Link url={fields.URL} subtitle={simpleUrl(fields.URL)}>
+          <Link url={fields.URL} subtitle={fields.Description} showUrl={true}>
             {fields.Title}
           </Link>
         </li>
