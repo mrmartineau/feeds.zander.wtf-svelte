@@ -29,11 +29,13 @@
   <ColumnHeading>{title}</ColumnHeading>
   <ul>
     {#each data as { title, url, description }}
-      <li class="mb-1">
-        <Link {url} subtitle={description} showUrl={true}>
-          {title}
-        </Link>
-      </li>
+      {#if title}
+        <li class="mb-1">
+          <Link {url} subtitle={description} showUrl={true}>
+            {title}
+          </Link>
+        </li>
+      {/if}
     {:else}
       <LinkSkeleton />
       <LinkSkeleton />
