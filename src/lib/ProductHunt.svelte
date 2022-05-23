@@ -2,7 +2,6 @@
   import { onMount } from 'svelte'
   import ColumnHeading from './ColumnHeading.svelte'
   import Link from './Link.svelte'
-  import { simpleUrl } from '../utils/simpleUrl'
   import LinkSkeleton from './LinkSkeleton.svelte'
 
   const FEED_PATH = `/api/producthunt`
