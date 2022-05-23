@@ -2,23 +2,23 @@
   import { onMount } from 'svelte'
   import ColumnHeading from './ColumnHeading.svelte'
   import Link from './Link.svelte'
-  import { simpleUrl } from '../utils/simpleUrl'
   import LinkSkeleton from './LinkSkeleton.svelte'
+  export let tag
+  export let title
 
   const COUNT = 70
-  const FEED_PATH = `/api/zmarks?count=${COUNT}`
+  const FEED_PATH = `/api/otter?tag=${tag}&count=${COUNT}`
 
   let data = []
-  if (window.localStorage.getItem('zm-bookmarks')) {
-    data = JSON.parse(window.localStorage.getItem('zm-bookmarks'))
+  if (window.localStorage.getItem(`zm-${tag}`)) {
+    data = JSON.parse(window.localStorage.getItem(`zm-${tag}`))
   }
   onMount(async () => {
     try {
       const res = await fetch(FEED_PATH)
       const json = await res.json()
-      console.log(`🚀 ~ onMount ~ json`, json)
       data = json.body.data
-      window.localStorage.setItem('zm-bookmarks', JSON.stringify(data))
+      window.localStorage.setItem(`zm-${tag}`, JSON.stringify(data))
     } catch (error) {
       console.log('no bookmarks')
     }
@@ -26,7 +26,7 @@
 </script>
 
 <div>
-  <ColumnHeading>Bookmarks</ColumnHeading>
+  <ColumnHeading>{title}</ColumnHeading>
   <ul>
     {#each data as { title, url, description }}
       <li class="mb-1">
