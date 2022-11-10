@@ -3,8 +3,8 @@
   import ColumnHeading from './ColumnHeading.svelte'
   import Link from './Link.svelte'
   import LinkSkeleton from './LinkSkeleton.svelte'
-  export let tag
-  export let title
+  export let tag: string
+  export let title: string
 
   const COUNT = 70
   const FEED_PATH = `/api/otter?tag=${tag}&count=${COUNT}`
